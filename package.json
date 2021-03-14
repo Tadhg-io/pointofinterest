@@ -1,0 +1,28 @@
+{
+  "name": "pointofinterest",
+  "version": "1.0.0",
+  "description": "An app to log and discuss points of interest in an online community",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tadhg-io/pointofinterest.git"
+  },
+  "author": "https://github.com/Tadhg-io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tadhg-io/pointofinterest/issues"
+  },
+  "homepage": "https://github.com/Tadhg-io/pointofinterest#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }, 
+  "prettier": {
+    "printWidth": 120
+  }
+}
