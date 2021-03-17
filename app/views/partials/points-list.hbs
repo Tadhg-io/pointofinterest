@@ -1,0 +1,21 @@
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <table class="uk-table">
+    <caption>
+      Points
+    </caption>
+    <thead>
+      <th>ID</th>
+      <th>Description</th>
+      <th>User</th>
+    </thead>
+    <tbody class="uk-text-left">
+      {{#each points}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{description}}</td>
+          <td>{{loggedBy}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
