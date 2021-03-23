@@ -4,17 +4,20 @@ const Mongoose = require("mongoose");
 const Schema = Mongoose.Schema;
 
 const pointSchema = new Schema({
-  id: String,
   description: String,
-  loggedBy: String
+  name: String,
+  loggedBy: String,
+  imageUrl: String,
+  owner:[
+    {type: Schema.Types.ObjectId, ref: 'User'}
+  ]
 });
 
-pointSchema.statics.findById = function(id) {
-  return this.findOne({ id : id});
+pointSchema.statics.findPointById = function(id) {
+  return this.findOne({ _id : id}).lean();
 };
 
 pointSchema.statics.findAll = function() {
-  console.log('finding');
   return this.find({}).lean();
 };
 

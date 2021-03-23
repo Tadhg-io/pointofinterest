@@ -1,11 +1,23 @@
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
-  <form class="uk-form-stacked uk-text-left" action="/add" method="POST">
+  <form class="uk-form-stacked uk-text-left" action="/add" method="POST" enctype="multipart/form-data">
     <div class="uk-grid uk-grid-stack">
       <div class="uk-width-1-2@m">
         <div class="uk-margin">
-          <label class="uk-form-label" for="form-stacked-text">Description</label>
+          <label class="uk-form-label" for="name-text">Name</label>
           <div class="uk-form-controls">
-            <input class="uk-input" id="form-stacked-text" type="text" name="description" placeholder="description" />
+            <input class="uk-input" id="name-text" type="text" name="name" placeholder="Name" />
+          </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label" for="desc-text">Description</label>
+          <div class="uk-form-controls">
+            <textarea class="uk-input" id="desc-text" type="text" name="description" rows="5" placeholder="Description" ></textarea>
+          </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label" for="image-file">Image</label>
+          <div class="uk-form-controls">
+            <input type="file" class="uk-input" id="image-file" name="imagefile" accept="image/png, image/jpeg">
           </div>
         </div>
       </div>

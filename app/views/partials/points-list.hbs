@@ -4,16 +4,16 @@
       Points
     </caption>
     <thead>
-      <th>ID</th>
+      <th>Name</th>
       <th>Description</th>
-      <th>User</th>
     </thead>
     <tbody class="uk-text-left">
       {{#each points}}
         <tr>
-          <td>{{id}}</td>
+          <td>{{name}}</td>
           <td>{{description}}</td>
-          <td>{{loggedBy}}</td>
+          <td><img src="{{imageUrl}}" /></td>
+          <td><a href="/view/{{_id}}">DETAILS</a></td>
         </tr>
       {{/each}}
     </tbody>
