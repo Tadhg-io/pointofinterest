@@ -8,13 +8,11 @@ const pointSchema = new Schema({
   name: String,
   loggedBy: String,
   imageUrl: String,
-  owner:[
-    {type: Schema.Types.ObjectId, ref: 'User'}
-  ]
+  owner: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 pointSchema.statics.findPointById = function(id) {
-  return this.findOne({ _id : id}).lean();
+  return this.findOne({ _id : id});
 };
 
 pointSchema.statics.findAll = function() {
