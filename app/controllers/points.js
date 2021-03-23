@@ -64,6 +64,18 @@ const POI = {
   },
   delete: {
     handler: async function (request, h) {
+
+      const pointId = request.params.id;
+      // get the logged in user
+      const loggedInUser = request.auth.credentials.id;
+      // get the point from the DB
+      const point = await Point.findPointById(pointId).lean();
+
+      // if the user owns the record, delete it
+      if(point.owner == loggedInUser) {
+        await Point.deleteOne({ _id: point._id });
+      }
+
       return h.redirect('/list');
     },
   },
