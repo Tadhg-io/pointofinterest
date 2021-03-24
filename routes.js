@@ -6,8 +6,8 @@ const POI = require("./app/controllers/points");
 module.exports = [
 
   // Home
-  { method: "GET", path: "/", config: Accounts.index },
-  { method: "GET", path: "/home", config: POI.home },
+  { method: "GET", path: "/", config: POI.index },
+  { method: "GET", path: "/create", config: POI.home },
 
   // Points
   { method: "GET", path: "/list", config: POI.list },
@@ -23,6 +23,8 @@ module.exports = [
   { method: "GET", path: "/login", config: Accounts.showLogin },
   { method: "GET", path: "/logout", config: Accounts.logout },
   { method: "POST", path: "/login", config: Accounts.login },
+  { method: 'GET', path: '/settings', config: Accounts.settings },
+  { method: 'POST', path: '/settings', config: Accounts.saveSettings },
 
   {
     method: "GET",

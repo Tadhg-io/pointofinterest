@@ -1,9 +1,12 @@
 <div class="uk-flex uk-flex-center uk-flex-middle uk-grid-small" uk-grid>
-  {{> title-card title="Donation Services Inc." subTitle="Please log in"}}
+  {{> title-card title="Log In" subTitle="Log in to view POIs"}}
   {{> welcome-menu }}
 </div>
 <div class="uk-container uk-margin">
   <div class="uk-child-width-expand uk-flex-center uk-flex-middle uk-text-center" uk-grid>
+    <div>
+      <img width="100%" src="images\ancient-sites-in-Ireland.jpg" uk-img>
+    </div>
     <div>
       <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large">
         <h3 class="uk-card-title uk-text-center">Welcome back!</h3>
@@ -11,12 +14,12 @@
           <div class="uk-margin uk-text-left">
             <label class="uk-form-label" for="form-stacked-text">Email</label>
             <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon" uk-icon="icon: mail"></span> <input class="uk-input uk-form-large" type="text" name="email">
+              <span class="uk-form-icon" uk-icon="icon: mail"></span> <input class="uk-input uk-form-large" type="text" name="email" placeholder="Email Address">
             </div>
           </div>
           <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon" uk-icon="icon: lock"></span> <input class="uk-input uk-form-large" type="password" name="password">
+              <span class="uk-form-icon" uk-icon="icon: lock"></span> <input class="uk-input uk-form-large" type="password" name="password" placeholder="Password">
             </div>
           </div>
           <div class="uk-margin">
@@ -26,9 +29,6 @@
         </form>
         {{> error }}
       </div>
-    </div>
-    <div>
-      <img width="300" src="images/homer2.png">
     </div>
   </div>
 </div>

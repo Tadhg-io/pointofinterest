@@ -1,38 +1,34 @@
 <div class="uk-flex uk-flex-center uk-flex-middle uk-grid-small" uk-grid>
-  {{> title-card title="Donation Services Inc." subTitle="Please sign up"}}
+  {{> title-card title="Sign Up" subTitle="Fill out the form below to get your account"}}
   {{> welcome-menu }}
 </div>
 <div class="uk-container uk-margin">
   <div class="uk-child-width-expand uk-flex-center uk-flex-middle uk-text-center" uk-grid>
     <div>
-      <img width="300" src="images/homer2.png">
+      <img class="uk-width-auto@m uk-box-shadow-large" src="images/dun-aonghusa.jpg" uk-img>
     </div>
     <div>
       <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large">
-        <h3 class="uk-card-title uk-text-center">Please enter details below</h3>
+        <h3 class="uk-card-title uk-text-center">Sign up here</h3>
         <form action="/signup" method="POST">
           <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon" uk-icon="icon: user"></span> <input class="uk-input uk-form-large" type="text"
-                                                                             name="firstName">
+              <span class="uk-form-icon" uk-icon="icon: user"></span> <input class="uk-input uk-form-large" type="text" name="firstName" placeholder="First Name">
             </div>
           </div>
           <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon" uk-icon="icon: user"></span> <input class="uk-input uk-form-large" type="text"
-                                                                             name="lastName">
+              <span class="uk-form-icon" uk-icon="icon: user"></span> <input class="uk-input uk-form-large" type="text" name="lastName" placeholder="Last Name">
             </div>
           </div>
           <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon" uk-icon="icon: mail"></span> <input class="uk-input uk-form-large" type="text"
-                                                                             name="email">
+              <span class="uk-form-icon" uk-icon="icon: mail"></span> <input class="uk-input uk-form-large" type="text" name="email" placeholder="Email Address">
             </div>
           </div>
           <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon" uk-icon="icon: lock"></span> <input class="uk-input uk-form-large"
-                                                                             type="password" name="password">
+              <span class="uk-form-icon" uk-icon="icon: lock"></span> <input class="uk-input uk-form-large" type="password" name="password" placeholder="Password">
             </div>
           </div>
           <div class="uk-margin">
