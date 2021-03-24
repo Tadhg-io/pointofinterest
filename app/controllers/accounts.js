@@ -1,5 +1,6 @@
 'use strict';
 const User = require('../models/user');
+const Joi = require('@hapi/joi');
 
 const Accounts = {
   index: {
@@ -16,6 +17,26 @@ const Accounts = {
   },
   signup: {
     auth: false,
+    validate: {
+      payload: {
+        firstName: Joi.string().required(),
+        lastName: Joi.string().required(),
+        email: Joi.string().email().required(),
+        password: Joi.string().required(),
+      },
+      options: {
+        abortEarly: false,
+      },
+      failAction: function (request, h, error) {
+        return h
+          .view("signup", {
+            title: "Sign up error",
+            errors: error.details,
+          })
+          .takeover()
+          .code(400);
+      },
+    },
     handler: async function(request, h) {
       const payload = request.payload;
       const newUser = new User({
@@ -37,6 +58,24 @@ const Accounts = {
   },
   login: {
     auth: false,
+    validate: {
+      payload: {
+        email: Joi.string().email().required(),
+        password: Joi.string().required(),
+      },
+      options: {
+        abortEarly: false,
+      },
+      failAction: function (request, h, error) {
+        return h
+          .view("login", {
+            title: "Sign in error",
+            errors: error.details,
+          })
+          .takeover()
+          .code(400);
+      },
+    },
     handler: async function(request, h) {
       const { email, password } = request.payload;
       let user = await User.findByEmail(email);
