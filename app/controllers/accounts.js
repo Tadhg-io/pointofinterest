@@ -3,12 +3,6 @@ const User = require('../models/user');
 const Joi = require('@hapi/joi');
 
 const Accounts = {
-  index: {
-    auth: false,
-    handler: function(request, h) {
-      return h.view("main", { title: "Welcome to Donations" });
-    }
-  },
   showSignup: {
     auth: false,
     handler: function(request, h) {
@@ -47,7 +41,7 @@ const Accounts = {
       });
       const user = await newUser.save();
       request.cookieAuth.set({ id: user.id });
-      return h.redirect("/home");
+      return h.redirect("/create");
     }
   },
   showLogin: {
@@ -82,7 +76,7 @@ const Accounts = {
       if (user) {
         if (user.comparePassword(password)) {
           request.cookieAuth.set({ id: user.id });
-          return h.redirect("/home");
+          return h.redirect("/create");
         }
       }
       return h.view("login", {
@@ -96,6 +90,31 @@ const Accounts = {
     handler: function(request, h) {
       request.cookieAuth.clear();
       return h.redirect('/');
+    }
+  },
+  saveSettings: {
+    handler: async function(request, h) {
+      const userEdit = request.payload;
+      const id = request.auth.credentials.id;
+      const user = await User.findById(id);
+      user.firstName = userEdit.firstName;
+      user.lastName = userEdit.lastName;
+      user.email = userEdit.email;
+      user.password = userEdit.password;
+      await user.save();
+      const updatedUser = await User.findById(id).lean();
+      return h.view("settings", { title: "Account Settings", user: updatedUser, successMessage: "Yor settings have been saved!" });
+    }
+  },
+  settings: {
+    handler: async function(request, h) {
+      try {
+        const id = request.auth.credentials.id;
+        const user = await User.findById(id).lean();
+        return h.view("settings", { title: "Account Settings", user: user });
+      } catch (err) {
+        return h.view("login", { errors: [{ message: err.message }] });
+      }
     }
   }
 };
