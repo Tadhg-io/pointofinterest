@@ -79,14 +79,16 @@ const Accounts = {
     handler: async function(request, h) {
       const { email, password } = request.payload;
       let user = await User.findByEmail(email);
-      if (!user) {
-        return h.redirect("/");
+      if (user) {
+        if (user.comparePassword(password)) {
+          request.cookieAuth.set({ id: user.id });
+          return h.redirect("/home");
+        }
       }
-      if (user.comparePassword(password)) {
-        request.cookieAuth.set({ id: user.id });
-        return h.redirect("/home");
-      }
-      return h.redirect("/");
+      return h.view("login", {
+        title: "Unsuccessful",
+        errors: [{ message: "Incorrect username or password." }],
+      })
     }
   },
   logout: {
