@@ -3,9 +3,20 @@ const Point = require('../models/point');
 const ImageStore = require('../utils/image-store');
 
 const POI = {
+  index: {
+    auth: false,
+    handler: function (request, h) {
+      return h.view("main", { 
+        title: "Point of Interest"
+      });
+    },
+  },
   home: {
     handler: function (request, h) {
-      return h.view("home", { title: "Make a Donation" });
+        return h.view("create", { 
+          title: "Point of Interest",
+          loggedIn: true
+        });
     },
   },
   list: {
