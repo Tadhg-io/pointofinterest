@@ -8,6 +8,7 @@ const Handlebars = require('handlebars');
 const Cookie = require("@hapi/cookie");
 const env = require('dotenv');
 const ImageStore = require('./app/utils/image-store');
+const Joi = require("@hapi/joi");
 
 env.config();
 
@@ -51,6 +52,8 @@ async function init() {
   });
 
   server.auth.default('session');
+
+  server.validator(require("@hapi/joi"));
 
   server.route(require('./routes'));
   await server.start();
