@@ -17,11 +17,19 @@
   },
   "homepage": "https://github.com/Tadhg-io/pointofinterest#readme",
   "dependencies": {
-    "@hapi/hapi": "^20.1.0"
+    "@hapi/cookie": "^11.0.2",
+    "@hapi/hapi": "^20.1.0",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "^6.0.1",
+    "cloudinary": "^1.25.1",
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.7",
+    "mongoose": "^5.12.0"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
-  }, 
+  },
   "prettier": {
     "printWidth": 120
   }
