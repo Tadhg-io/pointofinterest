@@ -6,12 +6,14 @@
     <thead>
       <th>Name</th>
       <th>Description</th>
+      <th>Category</th>
     </thead>
     <tbody class="uk-text-left">
       {{#each points}}
         <tr>
           <td>{{name}}</td>
           <td>{{description}}</td>
+          <td>{{category.name}}</td>
           <td><img src="{{imageUrl}}" /></td>
           <td><a href="/view/{{_id}}">DETAILS</a></td>
         </tr>

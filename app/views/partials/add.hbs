@@ -9,6 +9,16 @@
           </div>
         </div>
         <div class="uk-margin">
+          <label class="uk-form-label" for="name-text">Category</label>
+          <div class="uk-form-controls">
+            <select class="uk-button uk-button-default" name="category" id="category" placeholder="Category">
+              {{#each categories}}
+                <option value="{{_id}}">{{name}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
+        <div class="uk-margin">
           <label class="uk-form-label" for="desc-text">Description</label>
           <div class="uk-form-controls">
             <textarea class="uk-input" id="desc-text" type="text" name="description" rows="5" placeholder="Description" ></textarea>

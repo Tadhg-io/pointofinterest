@@ -1,20 +1,26 @@
 "use strict";
 const Point = require('../models/point');
+const Category = require('../models/category');
 const ImageStore = require('../utils/image-store');
 
 const POI = {
   index: {
     auth: false,
     handler: function (request, h) {
+
       return h.view("main", { 
         title: "Point of Interest"
       });
     },
   },
   home: {
-    handler: function (request, h) {
+    handler: async function (request, h) {
+
+      const categoryList = await Category.findAll();
+
         return h.view("create", { 
           title: "Point of Interest",
+          categories: categoryList,
           loggedIn: true
         });
     },
@@ -107,6 +113,7 @@ const POI = {
           description: data.description,
           name: data.name,
           imageUrl: url,
+          category: data.category,
           owner: loggedInUser
         });
         const point = await newPoint.save();
