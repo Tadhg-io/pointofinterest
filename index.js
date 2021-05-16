@@ -56,6 +56,7 @@ async function init() {
   server.validator(require("@hapi/joi"));
 
   server.route(require('./routes'));
+  server.route(require('./routes-api'));
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
 }
