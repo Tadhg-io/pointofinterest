@@ -114,6 +114,8 @@ const POI = {
           name: data.name,
           imageUrl: url,
           category: data.category,
+          latitude: data.latitude,
+          longitude: data.longitude,
           owner: loggedInUser
         });
         const point = await newPoint.save();

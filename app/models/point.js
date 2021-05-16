@@ -6,6 +6,8 @@ const Schema = Mongoose.Schema;
 const pointSchema = new Schema({
   description: String,
   name: String,
+  latitude: Number,
+  longitude: Number,
   loggedBy: String,
   imageUrl: String,
   category: {type: Schema.Types.ObjectId, ref: 'Category'},
