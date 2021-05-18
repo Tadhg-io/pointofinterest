@@ -1,14 +1,15 @@
 'use strict';
 
-const Point = require('../models/point');
+const User = require('../models/user');
 const Boom = require("@hapi/boom");
 
-const Points = {
+const Users = {
+
   find: {
     auth: false,
     handler: async function (request, h) {
-      const points = await Point.find();
-      return points;
+      const users = await User.find();
+      return users;
     },
   },
 
@@ -16,13 +17,13 @@ const Points = {
     auth: false,
     handler: async function (request, h) {
       try {
-        const point = await Point.findOne({ _id: request.params.id });
-        if (!point) {
-          return Boom.notFound("No Point with this id");
+        const user = await User.findOne({ _id: request.params.id });
+        if (!user) {
+          return Boom.notFound("No User with this id");
         }
-        return point;
+        return user;
       } catch (err) {
-        return Boom.notFound("No Point with this id");
+        return Boom.notFound("No User with this id");
       }
     },
   },
@@ -31,13 +32,15 @@ const Points = {
     auth: false,
     handler: async function (request, h) {
       const data = request.payload;
-      const newPoint = new Point({
-        name: data.name,
-        description: data.description
+      const newUser = new User({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        password: data.password
       });
-      const point = await newPoint.save();
-      if (point) {
-        return h.response(point).code(201);
+      const user = await newUser.save();
+      if (user) {
+        return h.response(user).code(201);
       }
       return Boom.badImplementation("error creating point");
     },
@@ -46,7 +49,7 @@ const Points = {
   deleteAll: {
     auth: false,
     handler: async function (request, h) {
-      await Point.deleteMany({});
+      await User.deleteMany({});
       return { success: true };
     },
   },
@@ -54,8 +57,8 @@ const Points = {
   deleteOne: {
     auth: false,
     handler: async function (request, h) {
-      const point = await Point.deleteOne({ _id: request.params.id });
-      if (point) {
+      const user = await User.deleteOne({ _id: request.params.id });
+      if (user) {
         return { success: true };
       }
       return Boom.notFound("id not found");
@@ -63,4 +66,4 @@ const Points = {
   },
 };
 
-module.exports = Points;
+module.exports = Users;

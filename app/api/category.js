@@ -1,14 +1,14 @@
 'use strict';
 
-const Point = require('../models/point');
+const Category = require('../models/category');
 const Boom = require("@hapi/boom");
 
-const Points = {
+const Categories = {
   find: {
     auth: false,
     handler: async function (request, h) {
-      const points = await Point.find();
-      return points;
+      const categories = await Category.find();
+      return categories;
     },
   },
 
@@ -16,11 +16,11 @@ const Points = {
     auth: false,
     handler: async function (request, h) {
       try {
-        const point = await Point.findOne({ _id: request.params.id });
-        if (!point) {
+        const category = await Category.findOne({ _id: request.params.id });
+        if (!category) {
           return Boom.notFound("No Point with this id");
         }
-        return point;
+        return category;
       } catch (err) {
         return Boom.notFound("No Point with this id");
       }
@@ -31,22 +31,21 @@ const Points = {
     auth: false,
     handler: async function (request, h) {
       const data = request.payload;
-      const newPoint = new Point({
-        name: data.name,
-        description: data.description
+      const newCategory = new Category({
+        name: data.name
       });
-      const point = await newPoint.save();
-      if (point) {
-        return h.response(point).code(201);
+      const category = await newCategory.save();
+      if (category) {
+        return h.response(category).code(201);
       }
-      return Boom.badImplementation("error creating point");
+      return Boom.badImplementation("error creating category");
     },
   },
 
   deleteAll: {
     auth: false,
     handler: async function (request, h) {
-      await Point.deleteMany({});
+      await Category.deleteMany({});
       return { success: true };
     },
   },
@@ -54,8 +53,8 @@ const Points = {
   deleteOne: {
     auth: false,
     handler: async function (request, h) {
-      const point = await Point.deleteOne({ _id: request.params.id });
-      if (point) {
+      const category = await Category.deleteOne({ _id: request.params.id });
+      if (category) {
         return { success: true };
       }
       return Boom.notFound("id not found");
@@ -63,4 +62,4 @@ const Points = {
   },
 };
 
-module.exports = Points;
+module.exports = Categories;
