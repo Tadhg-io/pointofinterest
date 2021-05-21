@@ -84,8 +84,8 @@ class TestService {
     }
   }
 
-  async createCategory(newUser) {
-    const response = await axios.post(this.baseUrl + "/api/cat", newUser);
+  async createCategory(newCategory) {
+    const response = await axios.post(this.baseUrl + "/api/cat", newCategory);
     return response.data;
   }
 
@@ -96,6 +96,66 @@ class TestService {
 
   async deleteOneCategory(id) {
     const response = await axios.delete(this.baseUrl + "/api/cat/" + id);
+    return response.data;
+  }
+
+  // COMMENTS
+  async getComments() {
+    const response = await axios.get(this.baseUrl + "/api/comments");
+    return response.data;
+  }
+
+  async getComment(id) {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/comments/" + id);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async createComment(newComment) {
+    const response = await axios.post(this.baseUrl + "/api/comments", newComment);
+    return response.data;
+  }
+
+  async deleteAllComments() {
+    const response = await axios.delete(this.baseUrl + "/api/comments");
+    return response.data;
+  }
+
+  async deleteOneComment(id) {
+    const response = await axios.delete(this.baseUrl + "/api/comments/" + id);
+    return response.data;
+  }
+
+  // RATINGS
+  async getRatings() {
+    const response = await axios.get(this.baseUrl + "/api/ratings");
+    return response.data;
+  }
+
+  async getRating(id) {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/ratings/" + id);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async createRating(newComment) {
+    const response = await axios.post(this.baseUrl + "/api/ratings", newComment);
+    return response.data;
+  }
+
+  async deleteAllRatings() {
+    const response = await axios.delete(this.baseUrl + "/api/ratings");
+    return response.data;
+  }
+
+  async deleteOneRating(id) {
+    const response = await axios.delete(this.baseUrl + "/api/ratings/" + id);
     return response.data;
   }
 }
