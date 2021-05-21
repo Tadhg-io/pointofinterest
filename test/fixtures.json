@@ -43,5 +43,27 @@
   ],
   "newCategory": {
     "name": "Hotel"
-  }
+  },
+  "newComments": [
+    {
+      "comment": "This place is awesome!"
+    },
+    {
+      "comment": "This place is Great!"
+    },
+    {
+      "comment": "This place is OK!"
+    }
+  ],
+  "newRatings": [
+    {
+      "rating": 5
+    },
+    {
+      "rating": 3
+    },
+    {
+      "rating": 4
+    }
+  ]
 }

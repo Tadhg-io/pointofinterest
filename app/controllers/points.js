@@ -147,6 +147,8 @@ const POI = {
       if(point.owner == loggedInUser) {
         // update the Point
         point.name = data.name;
+        point.latitude = data.latitude;
+        point.longitude = data.longitude;
         point.description = data.description;
         await point.save();
       }
