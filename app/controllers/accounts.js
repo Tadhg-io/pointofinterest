@@ -64,7 +64,19 @@ const Accounts = {
   showLogin: {
     auth: false,
     handler: function(request, h) {
-      return h.view('login', { title: 'Login to Donations' });
+      console.log("Auth", request.auth);
+      return h.view('login', { title: 'Login to Pints of Interest' });
+    }
+  },
+  gitHubLogin : {
+    auth: 'github-oauth',
+    handler: async function (request, h) {
+      console.log("profile", request.auth.credentials.profile);
+      // const username = request.auth.credentials.profile.username;
+      // const user = await User.findByUsername(username);
+      // if(!user)
+      request.cookieAuth.set(request.auth.credentials);
+      return h.redirect('/list');
     }
   },
   login: {

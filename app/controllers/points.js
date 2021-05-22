@@ -6,16 +6,17 @@ const sanitize = require('../utils/sanitize-html');
 const Joi = require('@hapi/joi');
 
 const POI = {
-  index: {
+  home: {
     auth: false,
     handler: function (request, h) {
 
+      console.log("HomeAuth", request.auth);
       return h.view("main", { 
         title: "Point of Interest"
       });
     },
   },
-  home: {
+  create: {
     handler: async function (request, h) {
 
       const categoryList = await Category.findAll();
@@ -29,6 +30,7 @@ const POI = {
   },
   list: {
     handler: async function (request, h) {
+      console.log("ListAuth", request.auth);
       const points = await Point.findAll();
       return h.view("list", {
         title: "POI list",

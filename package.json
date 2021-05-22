@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Tadhg-io/pointofinterest#readme",
   "dependencies": {
+    "@hapi/bell": "^12.2.0",
     "@hapi/boom": "^9.1.2",
     "@hapi/cookie": "^11.0.2",
     "@hapi/hapi": "^20.1.0",
