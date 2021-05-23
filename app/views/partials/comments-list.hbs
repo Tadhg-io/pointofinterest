@@ -1,0 +1,18 @@
+<div class="uk-margin uk-width-3xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <h3>
+    Comments
+  </h3>
+  <div class="">
+
+    {{#each comments}}
+
+        <div class="uk-card uk-card-default uk-card-small uk-card-body  uk-width-3-5 uk-align-center">
+          <h3 class="uk-card-title uk-align-left">
+            <i class="fas fa-user fa" style="color:rgb(0, 0, 0)" title="List" pos="bottom" uk-tooltip></i>&nbsp;{{user.firstName}}
+          </h3>
+          <p>{{comment}}</p>
+        </div>
+    {{/each}}
+
+  </div>
+</div>

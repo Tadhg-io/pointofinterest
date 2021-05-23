@@ -1,0 +1,73 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "points": [
+    {
+      "name": "Ringfort 10",
+      "description": "This is the Description for Ringfort 10"
+    },
+    {
+      "name": "Ringfort 12",
+      "description": "This is the Description for Ringfort 12"
+    }
+  ],
+  "newPoint": {
+    "name": "Giant's Causeway",
+    "description": "This is the Description for the Causeway"
+  },
+  "users": [
+    {
+      "firstName": "Thomas",
+      "lastName": "Paine",
+      "email": "thomas@liberty.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "john@smith.com",
+      "password": "secret"
+    }
+  ],
+  "newUser": {
+    "firstName": "Homer",
+    "lastName": "Simpson",
+    "email": "homer@simpson.com",
+    "password": "secret"
+  },
+  "categories": [
+    {
+      "name": "Pub",
+      "iconName": "glass-martini-alt"
+    },
+    {
+      "name": "Restaurant",
+      "iconName": "utensils"
+    }
+  ],
+  "newCategory": {
+    "name": "Hotel",
+    "iconName": "hotel"
+  },
+  "newComments": [
+    {
+      "comment": "This place is awesome!"
+    },
+    {
+      "comment": "This place is Great!"
+    },
+    {
+      "comment": "This place is OK!"
+    }
+  ],
+  "newRatings": [
+    {
+      "rating": 5
+    },
+    {
+      "rating": 3
+    },
+    {
+      "rating": 4
+    }
+  ]
+}
