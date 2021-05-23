@@ -1,10 +1,13 @@
 const Points = require('./app/api/points');
-const Users = require('./app/api/user');
+const Users = require('./app/api/users');
 const Categories = require('./app/api/category');
 const Comments = require('./app/api/comment');
 const Rating = require('./app/api/rating');
 
 module.exports = [
+
+  // Authentication
+  { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 
   // Points
   { method: 'GET', path: '/api/points', config: Points.find },

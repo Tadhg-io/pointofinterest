@@ -5,7 +5,9 @@ const Boom = require("@hapi/boom");
 
 const Points = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const points = await Point.find();
       return points;

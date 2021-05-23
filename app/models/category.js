@@ -4,7 +4,8 @@ const Mongoose = require("mongoose");
 const Schema = Mongoose.Schema;
 
 const categorySchema = new Schema({
-  name: String
+  name: String,
+  iconName: String
 });
 
 categorySchema.statics.findByName = function(name) {

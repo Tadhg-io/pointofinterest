@@ -62,8 +62,9 @@ suite("Points API tests", function () {
     }
 
     const allCategories = await testService.getCategories();
+    console.log(allCategories);
     for (var i = 0; i < categories.length; i++) {
-      assert(_.some([allCategories[i]], categories[i]), "returnedCategory must be a superset of newCandidate");
+      assert(_.some([allCategories[i]], categories[i]), "returnedCategory must be a superset of newCategory");
     }
   });
 
