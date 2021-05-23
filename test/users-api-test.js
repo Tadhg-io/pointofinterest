@@ -13,11 +13,13 @@ suite("Points API tests", function () {
   const _ = require("lodash");
 
   setup(async function () {
-    await testService.deleteAllUsers();
+    const returnedUser = await testService.createUser(newUser);
+    const response = await testService.authenticate(newUser);
   });
 
   teardown(async function () {
     await testService.deleteAllUsers();
+    testService.clearAuth();
   });
 
   test("create a user", async function () {
@@ -53,23 +55,26 @@ suite("Points API tests", function () {
     }
 
     const allUsers = await testService.getUsers();
-    assert.equal(allUsers.length, users.length);
+    assert.equal(allUsers.length, users.length + 1);
   });
 
-  test("get users detail", async function () {
+  test("get users details", async function () {
+    let arrUsers = [newUser];
+
     for (let u of users) {
-      await testService.createUser(u);
+      const createdUser = await testService.createUser(u);
+      arrUsers.push(createdUser);
     }
 
     const allUsers = await testService.getUsers();
-    for (var i = 0; i < users.length; i++) {
-      assert(_.some([allUsers[i]], users[i]), "returnedCandidate must be a superset of newCandidate");
+    for (var i = 0; i < arrUsers.length; i++) {
+      assert(_.some([allUsers[i]], arrUsers[i]), "returnedCandidate must be a superset of newCandidate");
     }
   });
 
-  test("get all users empty", async function () {
+  test("get all users only contains the authenticated user", async function () {
     const allUsers = await testService.getUsers();
-    assert.equal(allUsers.length, 0);
+    assert.equal(allUsers.length, 1);
   });
 
 });

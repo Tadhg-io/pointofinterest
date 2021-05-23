@@ -1,4 +1,43 @@
 <div class="uk-margin uk-width-3xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <div>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <div class="center">
+      <style>
+        #map {height:700px; }
+      </style>
+    </div>
+    <div id = "map">
+
+    </div>
+    <script>
+      // create the map object
+      var map = L.map('map').setView([53.4222, -7.56222], 6);
+      // define a custom icon
+      pintIcon = L.icon( {
+        iconUrl: 'images/pint-icon.png',
+        iconSize:     [40, 40],
+        iconAnchor:   [25, 25],
+        popupAnchor: [0, -45]
+      });
+      L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=lf6wzg5OvtmWsOgoIj2t',{
+        attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+      }).addTo(map);
+        // add each point to the map
+        {{#each points}}
+          markerPopup = L.popup().setContent(`
+            <b>{{name}}</b>
+            <br>
+            <i class="fas fa-{{category.iconName}} fa-2x" style="color:rgb(0, 0, 0)" title="List" pos="bottom" uk-tooltip></i>
+            <br>
+            {{description}}`);
+          locationMarker = L.marker ([{{latitude}}, {{longitude}}], {
+            icon:pintIcon
+          }).bindPopup(markerPopup).addTo(map);
+        {{/each}}
+    </script>
+
+  </div>
   <table class="uk-table">
     <caption>
       Points
@@ -13,7 +52,10 @@
         <tr>
           <td>{{name}}</td>
           <td>{{description}}</td>
-          <td>{{category.name}}</td>
+          <td>
+            <i class="fas fa-{{category.iconName}}" style="color:rgb(0, 0, 0)" title="List" pos="bottom" uk-tooltip></i> &nbsp;
+            {{category.name}}
+          </td>
           <td><img src="{{imageUrl}}" /></td>
           <td><a href="/view/{{_id}}">DETAILS</a></td>
         </tr>

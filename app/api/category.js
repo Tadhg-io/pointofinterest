@@ -32,7 +32,8 @@ const Categories = {
     handler: async function (request, h) {
       const data = request.payload;
       const newCategory = new Category({
-        name: data.name
+        name: data.name,
+        iconName: data.iconName
       });
       const category = await newCategory.save();
       if (category) {

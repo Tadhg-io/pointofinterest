@@ -1,4 +1,5 @@
 {
+  "baseUrl": "http://localhost:3000",
   "points": [
     {
       "name": "Ringfort 10",
@@ -35,14 +36,17 @@
   },
   "categories": [
     {
-      "name": "Pub"
+      "name": "Pub",
+      "iconName": "glass-martini-alt"
     },
     {
-      "name": "Restaurant"
+      "name": "Restaurant",
+      "iconName": "utensils"
     }
   ],
   "newCategory": {
-    "name": "Hotel"
+    "name": "Hotel",
+    "iconName": "hotel"
   },
   "newComments": [
     {

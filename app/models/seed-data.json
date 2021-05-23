@@ -11,13 +11,16 @@
   "categories": {
     "_model": "Category",
     "pub": {
-      "name": "Pub"
+      "name": "Pub",
+      "iconName": "glass-martini-alt"
     },
     "hotel": {
-      "name": "Hotel"
+      "name": "Hotel",
+      "iconName": "hotel"
     },
     "restaurant": {
-      "name": "Restaurant"
+      "name": "Restaurant",
+      "iconName": "utensils"
     }
   },
   "points": {
@@ -27,21 +30,27 @@
       "description": "A Ringfort in County Galway",
       "loggedBy": "John Smith",
       "category": "->categories.pub",
-      "owner": "->users.homer"
+      "owner": "->users.homer",
+      "latitude": 51.4222,
+      "longitude": -8.56222
     },
     "two": {
       "name": "Castle",
       "description": "A Castle in County Mayo",
       "loggedBy": "Thomas Paine",
       "category": "->categories.hotel",
-      "owner": "->users.homer"
+      "owner": "->users.homer",
+      "latitude": 53.4112,
+      "longitude": -7.96222
     },
     "three": {
       "name": "Cave",
       "description": "A Cave in County Galway",
       "loggedBy": "Thomas Jones",
       "category": "->categories.restaurant",
-      "owner": "->users.homer"
+      "owner": "->users.homer",
+      "latitude": 53.5622,
+      "longitude": -7.55222
     }
   }
 }
