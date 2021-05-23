@@ -26,31 +26,34 @@
   "points": {
     "_model": "Point",
     "one": {
-      "name": "Ringfort",
-      "description": "A Ringfort in County Galway",
+      "name": "McSwiggans",
+      "description": "McSwiggan’s is part of the fabric of Galway life, a landmark within this vibrant city for over 30 years. It’s has been seeping up stories since it evolved from a lively country stores trading potatoes in the iconic Woodquay Market, into a sanctuary to catch-up, hide-away, eat, drink, laugh and make memories.",
       "loggedBy": "John Smith",
-      "category": "->categories.pub",
-      "owner": "->users.homer",
-      "latitude": 51.4222,
-      "longitude": -8.56222
-    },
-    "two": {
-      "name": "Castle",
-      "description": "A Castle in County Mayo",
-      "loggedBy": "Thomas Paine",
-      "category": "->categories.hotel",
-      "owner": "->users.homer",
-      "latitude": 53.4112,
-      "longitude": -7.96222
-    },
-    "three": {
-      "name": "Cave",
-      "description": "A Cave in County Galway",
-      "loggedBy": "Thomas Jones",
       "category": "->categories.restaurant",
       "owner": "->users.homer",
-      "latitude": 53.5622,
-      "longitude": -7.55222
+      "latitude": 53.275081205720525,
+      "longitude": -9.052503705024721,
+      "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/19/30/da/0c/photo0jpg.jpg"
+    },
+    "two": {
+      "name": "Rearden's",
+      "description": "Cavernous, shabby-chic bar and live music venue, also offering sports on TV, sandwiches and pies.",
+      "loggedBy": "Thomas Paine",
+      "category": "->categories.restaurant",
+      "owner": "->users.homer",
+      "latitude": 51.89739000520668,
+      "longitude": -8.478114008903505,
+      "imageUrl": "https://lh3.googleusercontent.com/proxy/6JC7_W8dULOJW-1JLgdR9hVJWRAi71VXaJp7tzN3y4SihfM9qZdZStq61HTrAdIIGOA7xFb3iFnuj8jhmYAxSbl1kCGVNllvOr4--60uJ--8xzqkPDdz-YzZGJ40n9t51Y4"
+    },
+    "three": {
+      "name": "Mary's Bar & Hardware",
+      "description": "Mary's will have what you need, from a pint of plain to a can of WD40.",
+      "loggedBy": "Thomas Jones",
+      "category": "->categories.pub",
+      "owner": "->users.homer",
+      "latitude": 53.34289437363381,
+      "longitude": -6.260608434677124,
+      "imageUrl": "https://i0.wp.com/marysbar.ie/wp-content/uploads/2016/11/Bar-Sweets.jpg?resize=1250%2C500&ssl=1"
     }
   }
 }

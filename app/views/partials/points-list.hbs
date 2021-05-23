@@ -21,9 +21,9 @@
         // add each point to the map
         {{#each points}}
           markerPopup = L.popup().setContent(`
-            <b>{{name}}</b>
+            <a href="view/{{_id}}" ><b>{{name}}</b></a>
             <br>
-            <i class="fas fa-{{category.iconName}} fa-2x" style="color:rgb(0, 0, 0)" title="List" pos="bottom" uk-tooltip></i>
+            <i class="fas fa-{{category.iconName}} fa-2x" style="color:rgb(0, 0, 0)" title="{{category.name}}" pos="bottom" uk-tooltip></i>
             <br>
             {{description}}`);
           locationMarker = L.marker ([{{latitude}}, {{longitude}}], {

@@ -23,7 +23,7 @@ const POI = {
       const categoryList = await Category.findAll();
 
         return h.view("create", { 
-          title: "Point of Interest",
+          title: "Pint of Interest",
           categories: categoryList,
           loggedIn: true
         });
@@ -33,7 +33,7 @@ const POI = {
     handler: async function (request, h) {
       const points = await Point.findAll();
       return h.view("list", {
-        title: "POI list",
+        title: "Pints",
         points
       });
     },
@@ -155,11 +155,13 @@ const POI = {
       options: {
         abortEarly: false,
       },
-      failAction: function (request, h, error) {
+      failAction: async function (request, h, error) {
+        const categoryList = await Category.findAll();
         return h
           .view("create", {
             title: "Create error",
             errors: error.details,
+            categories: categoryList
           })
           .takeover()
           .code(400);
