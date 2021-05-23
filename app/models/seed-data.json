@@ -32,7 +32,8 @@
       "category": "->categories.restaurant",
       "owner": "->users.homer",
       "latitude": 53.275081205720525,
-      "longitude": -9.052503705024721
+      "longitude": -9.052503705024721,
+      "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/19/30/da/0c/photo0jpg.jpg"
     },
     "two": {
       "name": "Rearden's",
@@ -41,7 +42,8 @@
       "category": "->categories.restaurant",
       "owner": "->users.homer",
       "latitude": 51.89739000520668,
-      "longitude": -8.478114008903505
+      "longitude": -8.478114008903505,
+      "imageUrl": "https://lh3.googleusercontent.com/proxy/6JC7_W8dULOJW-1JLgdR9hVJWRAi71VXaJp7tzN3y4SihfM9qZdZStq61HTrAdIIGOA7xFb3iFnuj8jhmYAxSbl1kCGVNllvOr4--60uJ--8xzqkPDdz-YzZGJ40n9t51Y4"
     },
     "three": {
       "name": "Mary's Bar & Hardware",
@@ -50,7 +52,8 @@
       "category": "->categories.pub",
       "owner": "->users.homer",
       "latitude": 53.34289437363381,
-      "longitude": -6.260608434677124
+      "longitude": -6.260608434677124,
+      "imageUrl": "https://i0.wp.com/marysbar.ie/wp-content/uploads/2016/11/Bar-Sweets.jpg?resize=1250%2C500&ssl=1"
     }
   }
 }
