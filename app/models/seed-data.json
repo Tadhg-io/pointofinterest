@@ -26,31 +26,31 @@
   "points": {
     "_model": "Point",
     "one": {
-      "name": "Ringfort",
-      "description": "A Ringfort in County Galway",
+      "name": "McSwiggans",
+      "description": "McSwiggan’s is part of the fabric of Galway life, a landmark within this vibrant city for over 30 years. It’s has been seeping up stories since it evolved from a lively country stores trading potatoes in the iconic Woodquay Market, into a sanctuary to catch-up, hide-away, eat, drink, laugh and make memories.",
       "loggedBy": "John Smith",
-      "category": "->categories.pub",
-      "owner": "->users.homer",
-      "latitude": 51.4222,
-      "longitude": -8.56222
-    },
-    "two": {
-      "name": "Castle",
-      "description": "A Castle in County Mayo",
-      "loggedBy": "Thomas Paine",
-      "category": "->categories.hotel",
-      "owner": "->users.homer",
-      "latitude": 53.4112,
-      "longitude": -7.96222
-    },
-    "three": {
-      "name": "Cave",
-      "description": "A Cave in County Galway",
-      "loggedBy": "Thomas Jones",
       "category": "->categories.restaurant",
       "owner": "->users.homer",
-      "latitude": 53.5622,
-      "longitude": -7.55222
+      "latitude": 53.275081205720525,
+      "longitude": -9.052503705024721
+    },
+    "two": {
+      "name": "Rearden's",
+      "description": "Cavernous, shabby-chic bar and live music venue, also offering sports on TV, sandwiches and pies.",
+      "loggedBy": "Thomas Paine",
+      "category": "->categories.restaurant",
+      "owner": "->users.homer",
+      "latitude": 51.89739000520668,
+      "longitude": -8.478114008903505
+    },
+    "three": {
+      "name": "Mary's Bar & Hardware",
+      "description": "Mary's will have what you need, from a pint of plain to a can of WD40.",
+      "loggedBy": "Thomas Jones",
+      "category": "->categories.pub",
+      "owner": "->users.homer",
+      "latitude": 53.34289437363381,
+      "longitude": -6.260608434677124
     }
   }
 }

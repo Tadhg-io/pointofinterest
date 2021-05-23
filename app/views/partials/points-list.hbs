@@ -23,7 +23,7 @@
           markerPopup = L.popup().setContent(`
             <b>{{name}}</b>
             <br>
-            <i class="fas fa-{{category.iconName}} fa-2x" style="color:rgb(0, 0, 0)" title="List" pos="bottom" uk-tooltip></i>
+            <i class="fas fa-{{category.iconName}} fa-2x" style="color:rgb(0, 0, 0)" title="{{category.name}}" pos="bottom" uk-tooltip></i>
             <br>
             {{description}}`);
           locationMarker = L.marker ([{{latitude}}, {{longitude}}], {

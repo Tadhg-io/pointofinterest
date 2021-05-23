@@ -1,3 +1,4 @@
+{{> error }}
 <div class="uk-margin uk-width-3xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
   <form class="uk-form-horizontal uk-text-left" action="/add" method="POST" enctype="multipart/form-data">
     <div class="">
@@ -43,7 +44,7 @@
           </div>
           <script>
             // create the map object
-            var map = L.map("map").setView([53.4222, -7.56222], 6);
+            var map = L.map("map").setView([53.2734, -7.77832031], 6);
             // define a custom icon
             pintIcon = L.icon({
               iconUrl: "images/pint-icon.png",
@@ -54,7 +55,7 @@
             L.tileLayer("https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=lf6wzg5OvtmWsOgoIj2t", {
               attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e"
             }).addTo(map);
-            locationMarker = L.marker([51.4222, -8.56222], {
+            locationMarker = L.marker([53.2734, -7.77832031], {
               draggable: true
             }).addTo(map);
             locationMarker.on("dragend", function(event) {
@@ -70,14 +71,14 @@
       <div class="uk-margin">
         <label class="uk-form-label" for="name-text">Latitude</label>
         <div class="uk-form-controls">
-          <input class="uk-input" id="lat-input" type="text" name="latitude" placeholder="Latitude" readonly />
+          <input class="uk-input" id="lat-input" type="text" name="latitude" placeholder="Latitude" value="53.2734" readonly />
         </div>
       </div>
 
       <div class="uk-margin">
         <label class="uk-form-label" for="name-text">Longitude</label>
         <div class="uk-form-controls">
-          <input class="uk-input" id="long-input" type="text" name="longitude" placeholder="Longitude" readonly />
+          <input class="uk-input" id="long-input" type="text" name="longitude" placeholder="Longitude" value="-7.77832031" readonly />
         </div>
       </div>
 
@@ -86,5 +87,4 @@
           <button class="submit uk-button uk-button-primary uk-button-large uk-align-right">Save</button>
         </div>
   </form>
-  {{> error }}
 </div>
