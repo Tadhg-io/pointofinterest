@@ -10,6 +10,7 @@ const env = require('dotenv');
 const ImageStore = require('./app/utils/image-store');
 const Joi = require("@hapi/joi");
 const utils = require("./app/api/utils.js");
+const handlebarsHelpers = require("./app/utils/handlebars-helpers");
 
 env.config();
 
@@ -68,6 +69,9 @@ async function init() {
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
 }
+
+// register Handlebars helpers
+Handlebars.registerHelper('formatDate', handlebarsHelpers.formatDate);
 
 process.on('unhandledRejection', (err) => {
   console.log(err);
