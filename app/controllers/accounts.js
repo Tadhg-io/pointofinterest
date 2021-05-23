@@ -94,7 +94,7 @@ const Accounts = {
         const successfulLogin = await user.comparePassword(password);
         if (successfulLogin) {
           request.cookieAuth.set({ id: user.id });
-          return h.redirect("/create");
+          return h.redirect("/list");
         }
       }
       return h.view("login", {
