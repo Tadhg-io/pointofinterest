@@ -1,0 +1,43 @@
+<div class="uk-margin uk-width-1-1 uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large uk-flex-inline">
+  <div class="uk-margin uk-width-1-3">
+    {{# if averageRating }}
+      <h2>Average rating: {{averageRating}}</h2>
+    {{/if}}
+    <h3>Rate this Pint</h3>
+    <script>
+      function rate(rating) {
+        document.getElementById("ratingInput").setAttribute("value", rating);
+        document.querySelector("form[name='rateForm']").submit();
+      }
+    </script>
+    <form class="uk-form-horizontal uk-text-center" action="/rate/{{point._id}}" method="POST" name="rateForm" >
+      {{#each stars}}
+        <span onclick="rate({{value}})" class="fa fa-3x fa-star {{class}}"></span>
+      {{/each}}
+      <br>
+        <input hidden type="number" name="rating" id="ratingInput" value="{{rating}}" />
+    </form>
+  </div>
+  <div class="uk-margin uk-width-2-3">
+    <h3>Leave a Comment</h3>
+    <form class="uk-form uk-text-left" action="/add-comment/{{point._id}}" method="POST"
+          enctype="multipart/form-data">
+      <div class="">
+        <div class="">
+
+          <div class="uk-margin">
+            <div class="uk-form-controls">
+              <textarea class="uk-input" id="desc-text" type="text" name="comment" rows="5"
+                        placeholder="Type Comment here..."></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="uk-margin">
+        <button class="submit uk-button uk-button-primary uk-button-large uk-align-right">Save Comment</button>
+      </div>
+    </form>
+  </div>
+</div>

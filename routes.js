@@ -1,6 +1,7 @@
 "use strict";
 
 const Accounts = require("./app/controllers/accounts");
+const Social = require("./app/controllers/social");
 const POI = require("./app/controllers/points");
 
 module.exports = [
@@ -25,6 +26,11 @@ module.exports = [
   { method: "POST", path: "/login", config: Accounts.login },
   { method: 'GET', path: '/settings', config: Accounts.settings },
   { method: 'POST', path: '/settings', config: Accounts.saveSettings },
+
+  // Social
+  { method: 'POST', path: '/add-comment/{id}', config: Social.addComment },
+  { method: 'POST', path: '/rate/{id}', config: Social.rate },
+
 
   {
     method: "GET",
