@@ -15,7 +15,9 @@ const Points = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const point = await Point.findOne({ _id: request.params.id });
@@ -30,7 +32,9 @@ const Points = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const data = request.payload;
       const newPoint = new Point({
@@ -46,7 +50,9 @@ const Points = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       await Point.deleteMany({});
       return { success: true };
@@ -54,7 +60,9 @@ const Points = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const point = await Point.deleteOne({ _id: request.params.id });
       if (point) {

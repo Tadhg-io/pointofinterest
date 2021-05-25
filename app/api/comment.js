@@ -5,7 +5,9 @@ const Boom = require("@hapi/boom");
 
 const Comments = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const comments = await Comment.find();
       return comments;
@@ -13,7 +15,9 @@ const Comments = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const comment = await Comment.findOne({ _id: request.params.id });
@@ -28,7 +32,9 @@ const Comments = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const data = request.payload;
       const newComment = new Comment({
@@ -46,7 +52,9 @@ const Comments = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       await Comment.deleteMany({});
       return { success: true };
@@ -54,7 +62,9 @@ const Comments = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const comment = await Comment.deleteOne({ _id: request.params.id });
       if (comment) {
