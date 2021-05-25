@@ -11,6 +11,19 @@ suite("Points API tests", function () {
   let newCategory = fixtures.newCategory;
   const testService = new TestService("http://localhost:3000");
   const _ = require("lodash");
+  let newUser = fixtures.newUser;
+
+  suiteSetup(async function () {
+    await testService.deleteAllUsers();
+    const returnedUser = await testService.createUser(newUser);
+    const response = await testService.authenticate(newUser);
+  });
+
+  suiteTeardown(async function () {
+    await testService.deleteAllUsers();
+    testService.clearAuth();
+  });
+
 
   setup(async function () {
     await testService.deleteAllCategories();

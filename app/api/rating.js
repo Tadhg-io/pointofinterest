@@ -5,7 +5,9 @@ const Boom = require("@hapi/boom");
 
 const Ratings = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const ratings = await Rating.find();
       return ratings;
@@ -13,7 +15,9 @@ const Ratings = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const rating = await Rating.findOne({ _id: request.params.id });
@@ -28,7 +32,9 @@ const Ratings = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const data = request.payload;
       const newRating = new Rating({
@@ -45,7 +51,9 @@ const Ratings = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       await Rating.deleteMany({});
       return { success: true };
@@ -53,7 +61,9 @@ const Ratings = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const rating = await Rating.deleteOne({ _id: request.params.id });
       if (rating) {

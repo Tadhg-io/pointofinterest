@@ -3,7 +3,6 @@
 const assert = require("chai").assert;
 const TestService = require("./test-service");
 const fixtures = require("./fixtures.json");
-const axios = require("axios");
 
 suite("Points API tests", function () {
 

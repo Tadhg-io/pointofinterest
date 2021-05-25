@@ -1,7 +1,6 @@
 "use strict";
 
 const axios = require("axios");
-const baseUrl = "http://localhost:3000";
 
 class TestService {
   constructor(baseUrl) {
@@ -70,6 +69,7 @@ class TestService {
   }
 
   async createUser(newUser) {
+    console.log("before create");
     const response = await axios.post(this.baseUrl + "/api/users", newUser);
     return response.data;
   }

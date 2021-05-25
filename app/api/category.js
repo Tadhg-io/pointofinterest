@@ -5,7 +5,9 @@ const Boom = require("@hapi/boom");
 
 const Categories = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const categories = await Category.find();
       return categories;
@@ -13,7 +15,9 @@ const Categories = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const category = await Category.findOne({ _id: request.params.id });
@@ -28,7 +32,9 @@ const Categories = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const data = request.payload;
       const newCategory = new Category({
@@ -44,7 +50,9 @@ const Categories = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       await Category.deleteMany({});
       return { success: true };
@@ -52,7 +60,9 @@ const Categories = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       const category = await Category.deleteOne({ _id: request.params.id });
       if (category) {
