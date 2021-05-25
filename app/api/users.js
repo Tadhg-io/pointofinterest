@@ -66,14 +66,12 @@ const Users = {
       if (user) {
         return h.response(user).code(201);
       }
-      return Boom.badImplementation("error creating point");
+      return Boom.badImplementation("error creating user");
     },
   },
 
   deleteAll: {
-    auth: {
-      strategy: "jwt",
-    },
+    auth: false,
     handler: async function (request, h) {
       await User.deleteMany({});
       return { success: true };

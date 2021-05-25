@@ -10,8 +10,8 @@ suite("Points API tests", function () {
 
   let points = fixtures.points;
   let newPoint = fixtures.newPoint;
-  let newUser = fixtures.newUser;
   const testService = new TestService("http://localhost:3000");
+  let newUser = fixtures.newUser;
 
   suiteSetup(async function () {
     await testService.deleteAllUsers();
